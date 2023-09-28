@@ -1,0 +1,85 @@
+{% extends 'core/base.html' %}
+{% load static %}
+    
+    {% block title %} Home {% endblock %}
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    {% block content %}
+    <!-- Contenido -->
+    <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/Index.css'%}">
+    <div class="container contenido text-center">
+        <!-- presentacion -->
+        <div class="row">
+            <div class="col">
+                <h1>Maets Travel</h1>
+                <div class="col">
+                    <p style="margin-right: 100px;" class="spann">Turismo Regional de O'higgins</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Quienes somos -->
+    <div class="container-fluid bg-quien">
+
+        <div style="padding-top: 100px;"></div>
+
+        <div class="container bg-container-opac quien-letra">
+            <div class="row">
+                <div class="col">
+                    <h2>¿Quienes Somos?</h2>
+                    <p>Nosotros somo una empresa dedicada al turismo en la región de O'higgins reconocida por la zona y
+                        turistas por dar una experiencia unica en la región Ofreciendo Hoteleria, Charlas Historicas,
+                        Recorridos de la zona y llegamos a los lugares mas inaccesible de la región.
+
+                    </p>
+
+                    <div class="d-flex justify-content-between paddcard card-container">
+
+                        <div class="card border-light" style="width: 18rem;">
+                            <img src="{% static 'core/img/pichilemu.jpg'%}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3>Pichilemu</h3>
+                            <p class="card-text">Es un tranquilo balneario ubicado a 212 kilómetros al sur de Santiago y a 170 kilómetros de la capital regional, Rancagua.
+                                 Es famoso por la calidad de sus olas, lo que le ha valido el título de “la capital mundial del surf”.</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-light" style="width: 18rem;">
+                            <img src="{% static 'core/img/Rancagua.jpg'%}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3>Rancagua</h3>
+                            <p class="card-text">La ciudad de Rancagua esta en la cuenca de Rancagua y su extención es desde la Angostura de Pelequen a angostura de Paine,
+                                 esta en medio de la cordillera de la Costa y la cordillera de los Andes, Rancagua tambien es conocido por sus valles vitivinicolas</p>
+                            </div>
+                        </div>
+
+                        <div class="card border-light" style="width: 18rem;">
+                            <img src="{% static 'core/img/alto_colchagua.jpeg'%}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3> Alto Colchagua</h3>
+                            <p class="card-text">Alto Colchagua es conocido por sus cañones cordilleranos, sus imponentes paisajes y sus torrentes de agua cargadas de minerales.
+                                 Estas descienden con fuerza desde lo alto de las montañas, donde hay glaciares y lagunas andinas de inigualable belleza.</p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>  
+
+
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}
+    <script src="{% static 'core/js/bootstrap.bundle.min.js'%}"></script>
+</html>

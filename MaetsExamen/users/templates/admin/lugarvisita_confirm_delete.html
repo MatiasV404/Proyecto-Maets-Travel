@@ -1,0 +1,46 @@
+<style>
+    .app-lugarvisita {
+        margin-bottom: 20px;
+    }
+
+    .app-lugarvisita form {
+        margin-top: 10px;
+    }
+
+    .app-lugarvisita form p {
+        margin-bottom: 10px;
+    }
+
+    .app-lugarvisita form button {
+        padding: 6px 12px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .app-lugarvisita form button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="app-lugarvisita module">
+    <form id="delete-form" method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de que deseas eliminar este lugar de visita?</p>
+        <button id="confirm-delete" type="button">Sí</button>
+        <button id="cancel-delete" type="button">No</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('confirm-delete').addEventListener('click', function() {
+        document.getElementById('delete-form').submit();
+    });
+
+    document.getElementById('cancel-delete').addEventListener('click', function() {
+        window.location.href = "{% url 'lugarvisita_admin' %}";
+    });
+</script>

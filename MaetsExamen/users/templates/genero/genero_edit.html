@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>genero</title>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        {% if genero %}
+        <h1> Formulario Actualizar Géneros</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_table}}
+            <input type="submit" value="Actualizar">
+        </form>
+
+        <br> <br>
+        {% endif %}
+        <div class="idMensajes">
+            {% if mensaje %}
+            {{mensaje}}
+            {% endif %}
+        </div>
+
+        <br>
+
+        <a href="{% url 'crud_generos' %}"> Volver</a>
+
+    </div>
+</body>
+
+</html>

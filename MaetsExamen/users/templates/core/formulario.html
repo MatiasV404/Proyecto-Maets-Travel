@@ -1,0 +1,129 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title%}Contratar {% endblock %}
+<link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+    {% block content%}
+
+    <link href="{% static 'core/css/formulario.css'%}" rel="stylesheet">
+
+    <h1 class="titulof">Contrato de servicio</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="card border-dark mb-3">
+                    <div class="card-body">
+                        <form class="row g-3 needs-validation" id="formulario" novalidate action="{% url 'guardar_formulario' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="col-12">
+                                <label for="rut" class="form-label denomination">RUT</label>
+                                <input type="text" class="form-control" id="rut" name="rut" value="11111111-1" required>
+                                <div class="valid-feedback">
+                                    Correcto
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="pnombre" class="form-label denomination">Primer Nombre</label>
+                                <input type="text" class="form-control" id="pnombre" name="pnombre"  value="Mark" required>
+                                <div class="valid-feedback">
+                                    Correcto
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="papellido" class="form-label denomination">Primer Apellido</label>
+                                <input type="text" class="form-control" id="papellido" name="papellido" value="Otto" required>
+                                <div class="valid-feedback">
+                                    Correcto
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="sapellido" class="form-label denomination">Segundo Apellido</label>
+                                <input type="text" class="form-control" id="sapellido" name="sapellido" value="" required>
+                                <div class="valid-feedback">
+                                    Correcto
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="lvisita" class="form-label denomination">Lugar de Visita</label>
+                                <select class="form-select" id="lvisita" name="lvisita" onchange="showDenomination()" required>
+                                    <option selected disabled value="">Escoger un lugar</option>
+                                    {% for lugar in lugares %}
+                                        <option value="{{ lugar.pk }}">{{ lugar.nombre }}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="invalid-feedback">
+                                    Seleccione un valor correcto
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="selectDay" class="denomination">Día:</label>
+                                <select class="form-select" id="selectDay"></select>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="selectMonth" class="denomination">Mes:</label>
+                                <select class="form-select" id="selectMonth"></select>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <label for="selectYear" class="denomination">Año:</label>
+                                <select class="form-select" id="selectYear"></select>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div id="messageInput" class="" style="display: none;"></div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input denomination" type="checkbox" value=""
+                                        id="invalidCheck" required>
+                                    <label class="form-check-label denomination" for="invalidCheck">
+                                        Confirmar datos
+                                    </label>
+                                    <div class="invalid-feedback denomination">
+                                        Se deben confirmar los datos
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Enviar formulario</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'core/js/formulario.js'%}"></script>
+    {% endblock %}
+</body>
+    {% block footer %}
+    
+    {% endblock %}
+
+        
+        <script>
+            (() => {
+                'use strict'
+
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                const forms = document.querySelectorAll('.needs-validation')
+
+                // Loop over them and prevent submission
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+            })()</script>
+

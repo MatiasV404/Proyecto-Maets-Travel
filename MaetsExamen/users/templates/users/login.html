@@ -1,0 +1,82 @@
+{% extends "core/base.html" %}
+{% block title %} Login Page {% endblock title%}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'core/css/total.css'%}">
+<div style="padding-bottom: 150px;"></div>
+<div class="form-content my-3 p-3"">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                    <div class="card-header justify-content-center">
+                        <h3 class="font-weight-light my-1 text-center">Iniciar Sesión</h3>
+                    </div>
+                    {% if form.errors %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <div id="form_errors">
+                            {% for key, value in form.errors.items %}
+                            <strong>{{ value }}</strong>
+                            {% endfor %}
+                        </div>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    <div class="card-body text-center">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                        <a href="{% url 'social:begin' 'google-oauth2' %}"
+                                            class="btn btn-link btn-lg active btn-block">Iniciar Sesión Google</a>
+                                        <hr>
+                                        <p class="text-center"><strong>O</strong></p>
+                                        <hr>
+                                        <label class="small mb-1">Usuario</label>
+                                        {{ form.username }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                        <label class="small mb-1">Contraseña</label>
+                                        {{ form.password }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group">
+                                        <!-- Add a Remember me functionality -->
+                                        {{ form.remember_me }}
+                                        <label> Recuerdame</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-10 offset-md-1">
+                                    <div class="form-group mt-0 mb-1">
+                                        <button name="login" class="col-md-12 btn btn-dark" id="login">Iniciar
+                                            Sesión</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="small">
+                            <a href="{% url 'users-register' %}">Aun no tienes una cuenta? Registrate aqui!</a><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="padding-bottom: 105px;"></div>
+{% endblock content %}

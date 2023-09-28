@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title%} Donde ir {% endblock %}
+{% block content %}
+  <link href="{% static 'core/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'core/css/donde.css'%}">
+
+<script src="{% static 'core/js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'core/js/jquery-3.7.0.min.js'%}"></script>
+
+  <div class="container contenido">
+    <div class="row">
+      <div class="col-8">
+        <h1>¿Qué conocer?</h1>
+        <p>Actualmente Nuestra empresa cuenta con cuatro destinos dentro de la region.
+           Ofreciendo una experiencia inolvidable al que se atreva a conocer con nosotros.
+        </p>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-3 col-sm-12 paddeo">
+              <button onclick="cambiarCoordenadas(-34.1445627, -71.4239993)" class="border" style="border-radius: 10%; background-color: rgba(1, 2, 2, 0.4);">Lago Rapel</button>
+            </div>
+            <div class="col-3 col-sm-12 paddeo">
+              <button onclick="cambiarCoordenadas(-34.7112711, -70.3645474)" class="border" style="border-radius: 10%; background-color: rgba(1, 2, 2, 0.4);">Alto Colchagua</button>
+            </div>
+            <div class="col-3 col-sm-12 paddeo">
+              <button onclick="cambiarCoordenadas(-34.3863073, -72.0178098)" class="border" style="border-radius: 10%; background-color: rgba(1, 2, 2, 0.4);">Pichilemu</button>
+            </div>
+            <div class="col-3 col-sm-12 paddeo">
+              <button onclick="cambiarCoordenadas(-34.1701324, -70.7406259)" class="border" style="border-radius: 10%; background-color: rgba(1, 2, 2, 0.4);">Rancagua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 card">
+        <div id="map" style="margin-top: 25px;"></div>
+      </div>
+    </div>
+  </div>  
+
+  <script src="{% static 'core/js/donde.js'%}"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+
+    <div style='margin-top: 238px'></div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}
+  

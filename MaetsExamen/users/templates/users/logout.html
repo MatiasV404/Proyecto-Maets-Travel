@@ -1,0 +1,25 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block title %}Salir{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'core/css/Index.css'%}">
+<div style="margin-top: 150px;" class="container text-center">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card text-center" style="width: 18rem;">
+                <div class="card-body">
+                <h5 class="card-title">Has Cerrado sesión</h5>
+                <p class="card-text">
+                    Gracias por tu tiempo!, Vuelve a iniciar sesión cuando quieras.
+                </p>
+                <br><hr><a href="{% url 'login' %}" class="btn btn-primary">Volver a iniciar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+<style>
+    .app-persona.module {
+        margin-bottom: 20px;
+    }
+
+    .app-persona form {
+        margin-top: 10px;
+    }
+
+    .app-persona p {
+        margin-bottom: 10px;
+    }
+
+    .app-persona button {
+        display: inline-block;
+        padding: 6px 12px;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .app-persona button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="app-persona module">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+</div>

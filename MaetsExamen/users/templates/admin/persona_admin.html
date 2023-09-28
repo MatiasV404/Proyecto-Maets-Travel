@@ -1,0 +1,93 @@
+{% extends 'admin/navbar_admin.html' %}
+
+{% block content %}
+
+<style>
+    .app-persona {
+        margin-bottom: 20px;
+    }
+
+    .app-persona table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .app-persona th,
+    .app-persona td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .app-persona th {
+        background-color: #f2f2f2;
+    }
+
+    .app-persona a {
+        display: inline-block;
+        padding: 6px 12px;
+        text-decoration: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .app-persona a:hover {
+        background-color: #45a049;
+    }
+
+    .app-persona a + a {
+        margin-left: 5px;
+    }
+
+    .app-persona a.delete-link {
+        background-color: #f44336;
+    }
+
+    .app-persona a.delete-link:hover {
+        background-color: #d32f2f;
+    }
+
+    .app-persona a.add-link {
+        background-color: #2196f3;
+    }
+
+    .app-persona a.add-link:hover {
+        background-color: #1976d2;
+    }
+</style>
+
+
+<div class="app-persona module">
+    <table>
+        <thead>
+            <tr>
+                <th>RUT</th>
+                <th>Primer Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Lugar de Visita</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.rut }}</td>
+                    <td>{{ persona.primer_nombre }}</td>
+                    <td>{{ persona.primer_apellido }}</td>
+                    <td>{{ persona.segundo_apellido }}</td>
+                    <td>{{ persona.lugar_visita.nombre }}</td>
+                    <td>
+                        <a href="{% url 'persona_edit' persona.pk %}">Editar</a>
+                        <a href="{% url 'persona_delete' persona.pk %}">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'persona_add' %}">Agregar Persona</a>
+</div>
+
+{% endblock %}

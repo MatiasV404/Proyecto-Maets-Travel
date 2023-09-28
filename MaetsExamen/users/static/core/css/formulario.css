@@ -1,0 +1,47 @@
+body{
+  background-image: url('../img/fondo-de-pantalla-atardecer-bosque-minimo-4k-8k-naturaleza-scaled.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.denomination {
+    border: 1px solid rgba rgba(20, 127, 141, 0.2);
+    padding: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: rgba(120, 206, 219, 0.7);
+    line-height: 0.4;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+
+
+
+  .denomination2 {
+    border: 1px solid rgba rgba(20, 127, 141, 0.2);
+    background-color: rgba(4, 39, 44, 0.5);
+    border-radius: 10px;
+  }
+
+
+.titulof{
+    margin-top: 100px;
+    text-align: center;
+    margin-left: 75px;
+}
+
+.card{
+  width: 440px;
+}
+.denomination-5 {
+  border: 1px solid rgba rgba(20, 127, 141, 0.2);
+  padding: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: rgba(120, 206, 219, 0.7);
+  line-height: 0.4;
+  border-radius: 10px;
+  font-weight: bold;
+  height: 15px;
+}

@@ -1,0 +1,49 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Equipamientos</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+
+    <div class="container"><br>
+        <h2>Equipamientos</h2>
+        <hr>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Equipamiento</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for equipamiento in equipamientos %}
+
+                    <tr>
+                    <td>{{ equipamiento.equipamiento }}</td>
+                    <td>{{ equipamiento.precio }}</td>
+                    <td>{{ equipamiento.cantidad }}</td>
+                    <td><a class="btn btn-info" href="/edit/{{ equipamiento.id }}">Editar</a>
+                        <a class="btn btn-danger" href="/delete/{{ equipamiento.id }}">Borrar</a>
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/add_equipment/">Añadir equipamiento</a>
+        <hr>
+    </div>
+
+</body>
+</html>

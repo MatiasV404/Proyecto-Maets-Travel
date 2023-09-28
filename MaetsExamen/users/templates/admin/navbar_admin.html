@@ -1,0 +1,38 @@
+<style>
+    /* Estilo del navbar */
+    .navbar {
+        background-color: #4caf50;
+        overflow: hidden;
+    }
+
+    /* Estilo de los enlaces del navbar */
+    .navbar a {
+        float: left;
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Estilo de los enlaces del navbar al pasar el mouse por encima */
+    .navbar a:hover {
+        background-color: #45a049;
+    }
+
+    /* Estilo del botón "Volver" */
+    .navbar .right-btn {
+        float: right;
+    }
+</style>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="{% url 'lugarvisita_admin' %}">Administrar Lugar Visita</a>
+    <a href="{% url 'persona_admin' %}">Administrar Formularios</a>
+    <a href="{% url 'home' %}" class="right-btn">Volver</a>
+</div>
+
+{% block content %}
+
+{% endblock %}

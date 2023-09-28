@@ -1,0 +1,55 @@
+#map {
+	height: 500px;
+	width: 100%;
+}
+
+.contenido{
+  margin-top: 60px;
+  background-color: rgba(0,0,0,0.3);
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-image: url("../img/fondodonde.jpg");
+  color: white;
+}
+
+.footer{
+  margin-top: 237px;
+}
+
+h1{
+  padding-bottom: 10px;
+  font-size: 40px;
+  text-align: center;
+}
+
+p{
+  font-size: 25px;
+  padding-bottom: 50px;
+}
+
+.paddeo{
+  padding-bottom: 55px;
+}
+
+button{
+  background-color: rgba(0,0,0,0);
+  color: white;
+  border: none;
+  font-weight: bold;
+}
+
+.boton{
+
+  border: 2;
+
+}
+
+
+
+
